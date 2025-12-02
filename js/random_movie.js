@@ -1,5 +1,4 @@
-const apiKey = "b26a5cc353901df6a10a35ee74acb219";
-const BASE_URL = "https://api.themoviedb.org/3";
+import { API_KEY, BASE_URL } from './config.js';
 
 async function getRandomMovie() {
 	const filters = {
@@ -13,7 +12,7 @@ async function getRandomMovie() {
 	};
 
 	const queryString = new URLSearchParams({
-		api_key: apiKey,
+		api_key: API_KEY,
 		...filters,
 	}).toString();
 
@@ -29,7 +28,7 @@ async function getRandomMovie() {
 
 	// 2) Requête page aléatoire avec mêmes filtres
 	const queryStringPage = new URLSearchParams({
-		api_key: apiKey,
+		api_key: API_KEY,
 		...filters,
 		page: randomPage,
 	}).toString();
