@@ -7,7 +7,6 @@ async function getRandomSeries() {
 		"vote_average.gte": 6, // minimum note 6/10
 		"first_air_date.gte": "2000-01-01", // séries récentes
 		"first_air_date.lte": new Date().toISOString().split("T")[0],
-		with_original_language: "fr", // série originale française (optionnel)
 		page: 1,
 	};
 

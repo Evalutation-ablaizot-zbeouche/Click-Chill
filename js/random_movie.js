@@ -7,7 +7,6 @@ async function getRandomMovie() {
 		"vote_average.gte": 6, // minimum note 6/10
 		"primary_release_date.gte": "2000-01-01",
 		"primary_release_date.lte": new Date().toISOString().split("T")[0], // aujourd'hui
-		with_original_language: "fr", // films en français
 		page: 1,
 	};
 
