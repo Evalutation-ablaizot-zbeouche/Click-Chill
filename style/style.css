@@ -1,0 +1,148 @@
+
+
+/* ----- RESET ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #f54545;
+  --secondary: #4d96ff;
+  --tertiary: #fb8c1d;
+
+  --text-light: #ffffff;
+  --radius: 10px;
+  --transition: 0.25s ease;
+}
+
+/* ----- BODY MOBILE FIRST ----- */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #1e1e2f 0%, #252540 100%);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+/* ----- HEADER ----- */
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+}
+
+/* ----- MAIN ----- */
+main .container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+/* ----- SECTION (FILM / SERIE / ANIME) ----- */
+section {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform var(--transition);
+}
+
+section:hover {
+  transform: scale(1.015);
+}
+
+/* Bloc avec le bouton */
+section > div:first-child {
+  text-align: center;
+}
+
+/* Titre */
+section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Image générée */
+section img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Bloc résultat */
+section > div:last-child {
+  margin-top: 15px;
+}
+
+/* ----- BOUTONS EXISTANTS ----- */
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: var(--radius);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 260px;
+  margin: 10px auto 0;
+}
+
+.btn:hover {
+  transform: scale(1.07);
+}
+
+.btn-film { background: var(--primary); }
+.btn-serie { background: var(--secondary); }
+.btn-anime { background: var(--tertiary); }
+
+/* ----- FOOTER ----- */
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+}
+
+/* ----------------------------------------------- */
+/*                 DESKTOP VERSION                 */
+/* ----------------------------------------------- */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2.6rem;
+  }
+
+  main .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+
+  section {
+    min-height: 350px;
+  }
+
+  section img {
+    max-width: 200px;
+  }
+}
