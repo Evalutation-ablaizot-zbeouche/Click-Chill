@@ -1,0 +1,64 @@
+
+:root {
+  --primary: #f54545;
+  --secondary: #4d96ff;
+  --tertiary: #ffa54c;
+
+  --text-light: #ffffff;
+  --radius: 10px;
+  --transition: 0.25s ease;
+}
+
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: var(--radius);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  letter-spacing: 0.5px;
+}
+
+
+.btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+
+.btn-film {
+  background: var(--primary);
+}
+
+.btn-serie {
+  background: var(--secondary);
+}
+
+.btn-anime {
+  background: var(--tertiary);
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
