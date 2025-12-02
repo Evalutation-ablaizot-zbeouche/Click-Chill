@@ -1,6 +1,4 @@
-
-
-/* ----- RESET ----- */
+/* -------- RESET -------- */
 * {
   margin: 0;
   padding: 0;
@@ -13,33 +11,55 @@
   --tertiary: #fb8c1d;
 
   --text-light: #ffffff;
-  --radius: 10px;
+  --radius: 14px;
+
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.12);
+
   --transition: 0.25s ease;
 }
 
-/* ----- BODY MOBILE FIRST ----- */
+/* Google Font */
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* -------- BODY (MOBILE FIRST) -------- */
+body {
   background: linear-gradient(135deg, #1e1e2f 0%, #252540 100%);
   color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px 10px;
+  padding: 20px 12px;
 }
 
-/* ----- HEADER ----- */
+
+/* -------- HEADER -------- */
 header {
   text-align: center;
-  padding: 20px 0;
+  margin-bottom: 25px;
 }
 
 header h1 {
-  font-size: 1.9rem;
+  font-size: 2rem;
+  font-weight: 700;
   letter-spacing: 1px;
+  padding: 12px 20px;
+  display: inline-block;
+
+  /* Cadre stylé */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* ----- MAIN ----- */
+
+/* -------- MAIN -------- */
 main .container {
   display: flex;
   flex-direction: column;
@@ -47,87 +67,101 @@ main .container {
   width: 100%;
 }
 
-/* ----- SECTION (FILM / SERIE / ANIME) ----- */
+
+/* -------- SECTION CARDS -------- */
 section {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+
+  border-radius: 18px;
   padding: 20px;
-  transition: transform var(--transition);
+
+  transition: transform var(--transition), background var(--transition);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
 section:hover {
-  transform: scale(1.015);
+  transform: scale(1.02);
+  background: rgba(255,255,255,0.10);
 }
 
-/* Bloc avec le bouton */
-section > div:first-child {
+
+/* Titre de section */
+section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
   text-align: center;
 }
 
-/* Titre */
-section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
 
 /* Image générée */
 section img {
   width: 100%;
-  max-width: 180px;
+  max-width: 190px;
   height: auto;
-  margin: 10px auto;
+
+  margin: 12px auto;
   display: block;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
+
 
 /* Bloc résultat */
 section > div:last-child {
-  margin-top: 15px;
+  margin-top: 18px;
+  text-align: center;
 }
 
-/* ----- BOUTONS EXISTANTS ----- */
+
+/* -------- BUTTONS -------- */
 .btn {
-  padding: 15px 30px;
+  padding: 14px 25px;
   border: none;
   border-radius: var(--radius);
   color: var(--text-light);
-  font-size: 1.1rem;
+
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  letter-spacing: 0.5px;
+
   width: 100%;
   max-width: 260px;
-  margin: 10px auto 0;
+  margin: 14px auto 0;
+
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.20);
 }
 
 .btn:hover {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }
 
-.btn-film { background: var(--primary); }
+.btn-film  { background: var(--primary); }
 .btn-serie { background: var(--secondary); }
 .btn-anime { background: var(--tertiary); }
 
-/* ----- FOOTER ----- */
+
+/* -------- FOOTER -------- */
 footer {
   margin-top: auto;
   text-align: center;
   padding: 20px 0;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.8);
+  opacity: 0.8;
 }
 
-/* ----------------------------------------------- */
-/*                 DESKTOP VERSION                 */
-/* ----------------------------------------------- */
+
+/* -------- DESKTOP VERSION -------- */
 @media (min-width: 768px) {
+
   header h1 {
     font-size: 2.6rem;
+    padding: 18px 28px;
   }
 
   main .container {
@@ -139,10 +173,10 @@ footer {
   }
 
   section {
-    min-height: 350px;
+    min-height: 370px;
   }
 
   section img {
-    max-width: 200px;
+    max-width: 210px;
   }
 }
